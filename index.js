@@ -9,7 +9,7 @@ const Employee = require('./lib/Employee');
 
 let team = [];
 
-// Questions for user input //
+// Questions array for user input //
 const questions = {
     // Input info for Manager //
     Manager: [
@@ -17,8 +17,8 @@ const questions = {
             type: 'input',
             name: 'name',
             message: "Please enter manager name.",
-            validate: nameInput => {
-                if (nameInput) {
+            validate: id => {
+                if (id) {
                     return true
                 } else {
                     console.log ("Please enter manager name to continue.")
@@ -30,8 +30,8 @@ const questions = {
             type: 'input',
             name: 'id',
             message: "Please enter manager ID.",
-            validate: idInput => {
-                if (idInput) {
+            validate: id => {
+                if (id) {
                     return true
                 } else {
                     console.log ("Please enter manager ID to continue.")
@@ -43,8 +43,8 @@ const questions = {
             type: 'input',
             name: 'email',
             message: "Please enter the manager email address",
-            validate: emailInput => {
-                if (emailInput) {
+            validate: email => {
+                if (email) {
                     return true;
                 } else {
                 console.log ("Please enter an email address to continue.")
@@ -56,8 +56,8 @@ const questions = {
             type: 'input',
             name: 'officeNumber',
             message: "Please enter the manager's office number.",
-            validate: officeNumberInput => {
-                if (officeNumberInput) {
+            validate: officeNumber => {
+                if (officeNumber) {
                     return true
                 } else {
                     console.log ("Please enter an office number.")
@@ -79,11 +79,11 @@ const questions = {
             type: 'input',
             name: 'name',
             message: "Please enter the engineer name.",
-            validate: nameInput => {
-                if (nameInput) {
+            validate: name => {
+                if (name) {
                     return true 
                 } else {
-                    console.log ("Please enter a name to continue.")
+                    console.log ("Please provide a name to continue.")
                     return false;
                 }
             },
@@ -92,8 +92,8 @@ const questions = {
             type: 'input',
             name: 'email',
             message: "Please enter the engineer email address.",
-            validate: emailInput => {
-                if (emailInput) {
+            validate: email => {
+                if (email) {
                     return true;
                 } else {
                 console.log ("Please enter an email address to continue.")
@@ -104,9 +104,9 @@ const questions = {
         {
             type: 'input',
             name: 'github',
-            message: "Please enter the engineer's GitHub username."
-            validate: githubInput => {
-                if (githubInput) {
+            message: "Please enter the engineer's GitHub username.",
+            validate: github => {
+                if (github) {
                     return true
                 } else {
                     console.log ("Please enter a GitHub username to continue.")
@@ -127,9 +127,9 @@ const questions = {
         {
             type: 'input',
             name: 'name',
-            message: "Please enter intern name."
-            validate: nameInput => {
-                if (nameInput) {
+            message: "Please enter intern name.",
+            validate: name => {
+                if (name) {
                     return true
                 } else {
                     console.log ("Please enter a name to continue.")
@@ -140,9 +140,9 @@ const questions = {
         {
             type: 'input',
             name: 'email',
-            message: "Please enter intern email address."
-            validate: emailInput => {
-                if (emailInput) {
+            message: "Please enter intern email address.",
+            validate: email => {
+                if (email) {
                     return true;
                 } else {
                 console.log ("Please enter an email address to continue.")
@@ -152,10 +152,10 @@ const questions = {
         },
         {
             type: 'input',
-            name: 'school'
-            message: "Please enter name of the intern's school."
-            validate: schoolInput => {
-                if (schoolInput) {
+            name: 'school',
+            message: "Please enter name of the intern's school.",
+            validate: school => {
+                if (school) {
                     return true
                 } else {
                     console.log ("Please enter a school name to continue.")
@@ -177,8 +177,9 @@ const EmployeeRoleType = [
     {
         type: 'list',
         name: 'roleType',
-        message: "Please select the employee role type."
-        choices: ["Manager", "Engineer", "Intern",]
+        message: "Please select the employee role type.",
+        choices: ["Manager", "Engineer", "Intern"]
     }
 ];
+
 
